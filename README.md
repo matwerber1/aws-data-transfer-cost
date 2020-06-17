@@ -20,3 +20,4 @@ While the S3 service itself does not charge for inbound data (subject to the tra
 
 **If you have a public EC2 instance** that communicates with Amazon S3 over the public internet (via an Internet Gateway), then that EC2 instance must either have a public IP or a public Elastic IP address. [Data transferred on these public addresses is charged at $0.01 / GB](https://aws.amazon.com/ec2/pricing/on-demand/). Like the NAT Gateway charges, you can eliminate this charge by using an S3 PrivateLink Gateway / VPC Endpoint. 
 
+**If your EC2 communicates with Amazon S3 through a VPC Peering, Direct Connect, Transit Gateway, or AWS VPN connection**, then additional charges apply because each of these services has its own charge. For example, if you have an EC2 in VPC A, and VPC A's route tables are configured to route all requests through VPC B (perhaps for centralized traffic monitoring), you would also pay for the VPC Peering data transfer charge between VPC A and B.
